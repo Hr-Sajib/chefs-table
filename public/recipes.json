@@ -1,0 +1,93 @@
+[
+    {
+      "image_url": "images/Spicy-Chicken-Stirfry_179_SQ_Web.jpg",
+      "id": "1",
+      "name": "Spicy Chicken Stir-Fry",
+      "description": "A delicious and spicy chicken stir-fry with fresh vegetables.",
+      "ingredients_array": [
+        "550 g chicken breast",
+        "120 ml soy sauce",
+        "200 g basil leaves",
+        "400 g mushrooms",
+        "2 cloves garlic"
+      ],
+      "preparing_time": "30",
+      "calories": "320"
+    },
+    {
+      "image_url": "images/Creamy-Mushroom-Pasta-square-FS-51-1.jpg",
+      "id": "2",
+      "name": "Creamy Mushroom Pasta",
+      "description": "A creamy pasta dish with sautéed mushrooms and garlic.",
+      "ingredients_array": [
+        "300 g pasta",
+        "200 g mushrooms",
+        "100 ml heavy cream",
+        "2 cloves garlic",
+        "1/4 cup grated Parmesan cheese"
+      ],
+      "preparing_time": "25",
+      "calories": "380"
+    },
+    {
+      "image_url": "images/Authentic-Greek-salad-horiatiki-featured.jpg",
+      "id": "3",
+      "name": "Greek Salad",
+      "description": "A fresh and healthy Greek salad with tomatoes, cucumbers, olives, and feta cheese.",
+      "ingredients_array": [
+        "2 large tomatoes",
+        "1 cucumber",
+        "1 red onion",
+        "200 g feta cheese",
+        "100 g Kalamata olives",
+        "1/4 cup olive oil"
+      ],
+      "preparing_time": "15",
+      "calories": "250"
+    },
+    {
+      "image_url": "images/Margherita-9920.webp",
+      "id": "4",
+      "name": "Margherita Pizza",
+      "description": "A classic Margherita pizza with fresh tomatoes, mozzarella cheese, and basil.",
+      "ingredients_array": [
+        "1 pre-made pizza dough",
+        "200 g mozzarella cheese",
+        "2 large tomatoes",
+        "Fresh basil leaves"
+      ],
+      "preparing_time": "35",
+      "calories": "320"
+    },
+    {
+      "image_url": "images/Southern-Soul-Food-Homemade-Burger-Recipe-scaled-e1686005845207-500x500.jpg",
+      "id": "5",
+      "name": "Homemade Burger",
+      "description": "A juicy homemade burger with all the fixings, perfect for a summer barbecue.",
+      "ingredients_array": [
+        "500 g ground beef",
+        "4 burger buns",
+        "4 slices cheddar cheese",
+        "1 tomato"
+      ],
+      "preparing_time": "20",
+      "calories": "450"
+    },
+    {
+      "image_url": "images/blueberry-banana-smoothies-6-thumbnail.jpg",
+      "id": "6",
+      "name": "Berry Banana Smoothie",
+      "description": "A refreshing smoothie made with mixed berries, banana, and yogurt.",
+      "ingredients_array": [
+        "1 cup mixed berries (strawberries, blueberries, raspberries)",
+        "1 ripe banana",
+        "1/2 cup Greek yogurt",
+        "1/2 cup almond milk",
+        "1 tablespoon honey",
+        "Ice cubes"
+      ],
+      "preparing_time": "10",
+      "calories": "180"
+    }
+  ]
+  
