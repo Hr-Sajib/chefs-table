@@ -1,5 +1,5 @@
 
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe, handleWantedRecipes}) => {
 
     const {ingredients_array} = recipe;
     return (
@@ -25,7 +25,7 @@ const Recipe = ({recipe}) => {
                         </div>
                     </div>
                         <div className="flex justify-end">
-                            <button className="bg-green-400 hover:bg-green-700 hover:text-white rounded-full h-10 w-[150px] my-2 text-sm">Want To Cook</button>
+                            <button onClick={()=>handleWantedRecipes(recipe)} className="bg-green-400 hover:bg-green-700 hover:text-white rounded-full h-10 w-[150px] my-2 text-sm">Want To Cook</button>
                         </div>
                     
                 </div>
