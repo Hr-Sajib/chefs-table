@@ -1,14 +1,16 @@
 
-const WantCart = ({wantedRecipes}) => {
-    // const{name,preparing_time,calories}=wantedRecipes;
+import WantedItem from './WantedItem'
+const WantCart = ({wantedRecipes, handlepreparingRecipes}) => {
+
     return (
-        <div>
+        // <div>
             wantedRecipes.map(item=><WantedItem key={item.id}
                                                 name={item.name}
                                                 preparing_time={item.preparing_time}
                                                 calories={item.calories}
+                                                handlepreparingRecipes={handlepreparingRecipes}
                                                 ></WantedItem>)
-        </div>
+        // </div>
         
     );
 };
@@ -18,13 +20,3 @@ export default WantCart;
 
 
 
-const WantedItem =({name,preparing_time,calories})=>{
-    return(
-        <div className="p-5 flex gap-1">
-            <p className="font-bold">Want to cook: 01</p>
-            <p>{name}</p>
-            <p>{preparing_time}</p>
-            <p>{calories}</p>
-        </div>
-    )
-}

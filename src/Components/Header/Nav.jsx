@@ -15,9 +15,14 @@ const Nav = () => {
                 <li>About</li>
                 <li>Search</li>
             </ul>
-            <div className='flex gap-1'>
-                <input className=" bg-green-100  rounded-3xl h-[50px] pl-4" placeholder="Search" type="text" name="" id="" />
-                <img src={NavProfile} alt="" />
+            <div className='flex gap-1 items-center'>
+                <div className='border flex bg-gray-100 rounded-3xl'>
+                    <div>
+                        <input className="rounded-3xl bg-gray-100 h-[50px] pl-6 mr-1" placeholder="Search" type="text" name="" id="" />
+                        <button className='px-5 rounded-3xl w-16 bg-gray-100 h-[50px]'><img src="../../../images/searchIcon.png" alt="" /></button>
+                    </div>
+                </div>
+                <img className='w-10 h-10' src={NavProfile} alt="" />
             </div>
         </div>
     );

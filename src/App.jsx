@@ -6,6 +6,7 @@ import Nav from './Components/Header/Nav'
 import Header from './Components/Header/Header'
 import Recipes from './Components/Recipes/Recipes'
 import WantCart from "./Components/Cart/WantCart"
+import CookingCart from './Components/Cart/CookingCart'
 
 
 function App() {
@@ -15,12 +16,24 @@ function App() {
   const [wantedRecipes, setwantedRecipes]=useState([]);
 
   const handleWantedRecipes=(recipe)=>{
-    const newwantedRecipes=[...wantedRecipes,recipe]
-    setwantedRecipes(newwantedRecipes)
+    if(!wantedRecipes.includes(recipe)){ 
+      const newwantedRecipes=[...wantedRecipes,recipe]
+      setwantedRecipes(newwantedRecipes)
+    }
+
   }
   
-  
-  
+
+
+
+  const [preparingRecipes, setpreparingRecipes]=useState([]);
+
+  const handlepreparingRecipes=(recipe)=>{
+      const newpreparingRecipes=[...preparingRecipes,recipe]
+      setpreparingRecipes(newpreparingRecipes)
+      
+  }
+  // console.log(preparingRecipes);
 
 
   return (
@@ -37,14 +50,30 @@ function App() {
 
      <div className='flex'>
 
-      {/* recipies  */}
-      <Recipes handleWantedRecipes={handleWantedRecipes}></Recipes>
+        {/* recipies  */}
+        <Recipes handleWantedRecipes={handleWantedRecipes}></Recipes>
 
-      {/* recipe cart  */}
-      <div className="border ml-3 mt-6 rounded-xl w-[460px]">
-        <WantCart
-        wantedRecipes={wantedRecipes}></WantCart>
-    </div>
+        {/* recipe cart  */}
+        <div className="border ml-3 mt-6 rounded-xl w-[460px] pt-3">
+          <p className="font-bold my-1 text-green-700">Want to cook: <span>{wantedRecipes.length}</span></p>
+          
+          <div className='flex justify-start gap-5 my-1 pl-3'><p className='mr-16'>Name</p><p>Time</p><p>Calories</p></div>
+          <hr /> 
+
+          <WantCart
+            wantedRecipes={wantedRecipes}
+            handlepreparingRecipes={handlepreparingRecipes} >
+          </WantCart>
+
+          {/* Cooking cart  */}
+          <div>
+            <p className="font-bold my-1 text-green-700 mt-5">Currently Cooking <span>0</span></p>
+            
+            <CookingCart
+            preparingRecipes={preparingRecipes}></CookingCart>
+          </div>
+        </div>
+
      </div>
      
 

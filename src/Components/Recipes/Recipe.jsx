@@ -2,6 +2,7 @@
 const Recipe = ({recipe, handleWantedRecipes}) => {
 
     const {ingredients_array} = recipe;
+    
     return (
         <div>
                 <div className=" flex flex-col justify-between border rounded-xl p-5 h-[800px] w-[400px] bg-green-50">
@@ -17,14 +18,15 @@ const Recipe = ({recipe, handleWantedRecipes}) => {
                             }
                         </ul>
                         <hr  className="my-3"/>
-                        <div className="flex items-center gap-1 text-gray-600">
-                            <img className="w-5 h-5" src="../../../images/timeIcon.png" alt="" />
-                            <p className="text-[18px]"><span>30</span> minutes</p>
-                            <img className="w-5 h-5" src="../../../images/caloryIcon.png" alt="" />
-                            <p className="text-[18px]"><span>600</span> calories</p>
-                        </div>
+                        
                     </div>
-                        <div className="flex justify-end">
+                        <div className="flex flex-col items-end text-right">
+                            <div className="flex items-center gap-1 text-gray-600">
+                                <img className="w-5 h-5" src="../../../images/timeIcon.png" alt="" />
+                                <p className="text-[18px]"><span>30</span> minutes</p>
+                                <img className="w-5 h-5" src="../../../images/caloryIcon.png" alt="" />
+                                <p className="text-[18px]"><span>600</span> calories</p>
+                            </div>
                             <button onClick={()=>handleWantedRecipes(recipe)} className="bg-green-400 hover:bg-green-700 hover:text-white rounded-full h-10 w-[150px] my-2 text-sm">Want To Cook</button>
                         </div>
                     
