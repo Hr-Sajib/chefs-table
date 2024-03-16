@@ -15,8 +15,13 @@ function App() {
   const [wantedRecipes, setwantedRecipes]=useState([]);
 
   const handleWantedRecipes=(recipe)=>{
-    console.log(recipe)
+    const newwantedRecipes=[...wantedRecipes,recipe]
+    setwantedRecipes(newwantedRecipes)
   }
+  
+  
+  
+
 
   return (
     <>
@@ -37,7 +42,8 @@ function App() {
 
       {/* recipe cart  */}
       <div className="border ml-3 mt-6 rounded-xl w-[460px]">
-        <WantCart></WantCart>
+        <WantCart
+        wantedRecipes={wantedRecipes}></WantCart>
     </div>
      </div>
      
