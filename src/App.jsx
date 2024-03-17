@@ -52,10 +52,8 @@ function App() {
 
       const newWantedRecipes = wantedRecipes.filter(wantedRecipe=> wantedRecipe.name!==recipe.name)
       setwantedRecipes(newWantedRecipes);
-
-
-      
   }
+
 
 
   return (
@@ -70,7 +68,7 @@ function App() {
       </div>
 
 
-     <div className='flex lg:flex-row flex-col'>
+     <div id='recipesSect' className='flex lg:flex-row flex-col'>
 
         {/* recipies  */}
         <Recipes handleWantedRecipes={handleWantedRecipes}></Recipes>

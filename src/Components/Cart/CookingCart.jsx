@@ -23,7 +23,7 @@ export default CookingCart;
 const CookingItem =({name,preparing_time,calories})=>{
     
     return(
-        <div className="h-[60px] flex flex-row items-center mt-1 rounded-xl p-1 justify-start text-[16px] mx-1 bg-green-100">
+        <div className="cookingItem  h-[60px] flex flex-row items-center mt-1 rounded-xl p-1 justify-start text-[16px] mx-1 bg-green-300">
             <p className="w-[180px] text-left mr-6 ml-1">{name}</p>
             <p className="mr-14">{preparing_time}</p>
             <p>{calories}</p>

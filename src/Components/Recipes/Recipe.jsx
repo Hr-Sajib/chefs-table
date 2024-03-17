@@ -27,7 +27,7 @@ const Recipe = ({recipe, handleWantedRecipes}) => {
                             <img className="w-5 h-5" src="../../../images/caloryIcon.png" alt="" />
                             <p className="text-[18px]"><span>600</span> calories</p>
                         </div>
-                        <button onClick={()=>handleWantedRecipes(recipe)} className="bg-green-400 hover:bg-green-700 hover:text-white rounded-full h-10 w-[150px] my-2 text-sm">Want To Cook</button>
+                        <button onClick={()=>handleWantedRecipes(recipe)} className="wantToCookBtn bg-green-400 hover:bg-green-700 hover:text-white rounded-full h-10 w-[150px] my-2 text-sm">Want To Cook</button>
                     </div>
                 
             </div>
