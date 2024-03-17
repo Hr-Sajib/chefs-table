@@ -17,12 +17,14 @@ const CookingCart = ({preparingRecipes}) => {
 
 export default CookingCart;
 
+
+
+
 const CookingItem =({name,preparing_time,calories})=>{
     
-    console.log(name);
     return(
-        <div className="flex flex-row items-center mt-1 rounded-xl p-1 flex justify-start text-[16px] mx-1 bg-green-100">
-            <p className="w-[160px] text-left mr-6 ml-1">{name}</p>
+        <div className="h-[60px] flex flex-row items-center mt-1 rounded-xl p-1 justify-start text-[16px] mx-1 bg-green-100">
+            <p className="w-[180px] text-left mr-6 ml-1">{name}</p>
             <p className="mr-14">{preparing_time}</p>
             <p>{calories}</p>
         </div>

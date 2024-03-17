@@ -7,6 +7,8 @@ import Header from './Components/Header/Header'
 import Recipes from './Components/Recipes/Recipes'
 import WantCart from "./Components/Cart/WantCart"
 import CookingCart from './Components/Cart/CookingCart'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -20,6 +22,9 @@ function App() {
       const newwantedRecipes=[...wantedRecipes,recipe]
       setwantedRecipes(newwantedRecipes)
     }
+    else{
+      toast('Already added... ')
+    }
 
   }
   
@@ -28,37 +33,56 @@ function App() {
 
   const [preparingRecipes, setpreparingRecipes]=useState([]);
 
+  const[totalTime,setTotalTime] = useState(0);
+  const[totalCalory,setTotalCalory] = useState(0);
+
+
+
   const handlepreparingRecipes=(recipe)=>{
+      // update preparing table 
       const newpreparingRecipes=[...preparingRecipes,recipe]
       setpreparingRecipes(newpreparingRecipes)
+      console.log(recipe.preparing_time)
+
+      // update totals 
+      const newTotalTime = totalTime + parseInt(recipe.preparing_time);
+      setTotalTime(newTotalTime)
+      const newTotalCalory = totalCalory + parseInt(recipe.calories);
+      setTotalCalory(newTotalCalory)
+
+      const newWantedRecipes = wantedRecipes.filter(wantedRecipe=> wantedRecipe.name!==recipe.name)
+      setwantedRecipes(newWantedRecipes);
+
+
       
   }
-  // console.log(preparingRecipes);
 
 
   return (
-    <>
+    <div className=''>
      
      <Nav></Nav>
      <Header></Header>
 
-     <div className="mt-20">
-        <h1 className="font-bold text-2xl">Our Recipes</h1>
-        <p className="text-gray-600">Discover a wealth of culinary inspiration within Our Recipes section, where each dish is a masterpiece waiting to be savored. From comforting classics to innovative creations, let your gastronomic journey begin here.</p>
+     <div className="lg:mt-20 mt-10">
+        <h1 className="font-bold lg:text-2xl text-xl">Our Recipes</h1>
+        <p className="text-gray-600 lg:text-base text-[16px] lg:px-0 px-6">Discover a wealth of culinary inspiration within Our Recipes section, where each dish is a masterpiece waiting to be savored. From comforting classics to innovative creations, let your gastronomic journey begin here.</p>
       </div>
 
 
-     <div className='flex'>
+     <div className='flex lg:flex-row flex-col'>
 
         {/* recipies  */}
         <Recipes handleWantedRecipes={handleWantedRecipes}></Recipes>
 
         {/* recipe cart  */}
-        <div className="border ml-3 mt-6 rounded-xl w-[460px] pt-3">
+        <ToastContainer />
+
+        <div className="border lg:ml-3 mt-6 rounded-xl lg:w-[460px] pt-3">
           <p className="font-bold my-1 text-green-700">Want to cook: <span>{wantedRecipes.length}</span></p>
           
           <div className='flex justify-start gap-5 my-1 pl-3'><p className='mr-16'>Name</p><p>Time</p><p>Calories</p></div>
-          <hr /> 
+          <hr className='mb-3'/> 
 
           <WantCart
             wantedRecipes={wantedRecipes}
@@ -67,23 +91,25 @@ function App() {
 
           {/* Cooking cart  */}
           <div>
-            <p className="font-bold my-1 text-green-700 mt-5">Currently Cooking <span>0</span></p>
+            <p className="font-bold my-1 text-green-700 mt-16">Currently Cooking <span>{preparingRecipes.length}</span></p>
             
             <CookingCart
-            preparingRecipes={preparingRecipes}></CookingCart>
+            preparingRecipes={preparingRecipes}>
+            </CookingCart>
+
+            <hr className='my-3'/>
+
+            {/* totals  */}
+            <div className='flex  items-center justify-around lg:pr-10 '>
+              <p className='text-[18px] w-[150px]'>Total:</p><p>{totalTime} min</p><p>{totalCalory} cal</p>
+            </div>
           </div>
         </div>
 
      </div>
      
-
-
-    
-    
-
-
-                
-    </> 
+     
+    </div> 
   )
 }
 
